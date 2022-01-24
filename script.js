@@ -1,6 +1,7 @@
 'use strict';
 
-let myLeads = [];
+let myLeads = `["www.awesomelead.com"]`;
+
 // Input btn 
 const inputBtn = document.getElementById("input-btn");
 // input 
@@ -9,12 +10,16 @@ const inputEl = document.getElementById("input-el");
 // list 
 const ulEl = document.getElementById("ul-el");
 
+
+
 // 1. Create a variable, listItems, to hold all the HTML for the list items
 
 // function that saves input to array 
 inputBtn.addEventListener("click", function(){
   myLeads.push(inputEl.value);
   inputEl.value = " ";
+  //save lead to local storage
+  localStorage.setItem("myLeads", JSON.stringify(myLeads) )
   renderLeads();
 });
 
@@ -33,6 +38,7 @@ function renderLeads(){
   }
   ulEl.innerHTML = listItems;
 }
+
 
 
 
