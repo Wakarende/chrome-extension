@@ -1,18 +1,24 @@
 'use strict';
 
-let myLeads = [];
+let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"];
+// Input btn 
 const inputBtn = document.getElementById("input-btn");
-const inputEl = document.getElementById("input-el");
+// input 
+const inputEl = document.getElementById("input-el").value;
 
-// function saveInput(){
-//   inputBtn = console.log("button clicked");
-// }
+// list 
+const ulEl = document.getElementById("ul-el");
 
+// function that saves input to array 
 inputBtn.addEventListener("click", function(){
-  console.log("Button clicked!");
-  myLeads.push("www.awesomelead.com");
+  myLeads.push(inputEl);
   console.log(myLeads);
 });
 
+
+// For loop that logs/renders out input values
+for (let i = 0; i < myLeads.length; i++){
+  ulEl.innerHTML+= "<li>" + myLeads[i] + "</li>"
+}
 
 
