@@ -1,6 +1,6 @@
 'use strict';
 
-let myLeads = `["www.awesomelead.com"]`;
+let myLeads = [];
 
 // Input btn 
 const inputBtn = document.getElementById("input-btn");
@@ -10,9 +10,13 @@ const inputEl = document.getElementById("input-el");
 // list 
 const ulEl = document.getElementById("ul-el");
 
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads"));
 
-
-// 1. Create a variable, listItems, to hold all the HTML for the list items
+// Persists input values across refreshes 
+if (leadsFromLocalStorage) {
+  myLeads = leadsFromLocalStorage
+  renderLeads()
+}
 
 // function that saves input to array 
 inputBtn.addEventListener("click", function(){
