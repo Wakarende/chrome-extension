@@ -37,5 +37,11 @@ a{
   color: #5f9341;
 }
 
+#delete-btn{
+  background-color: white;
+  border: 1px solid #5f9341;
+  color: #5f9341;
+}
+
 
 

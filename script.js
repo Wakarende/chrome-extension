@@ -10,9 +10,9 @@ const inputEl = document.getElementById("input-el");
 // list 
 const ulEl = document.getElementById("ul-el");
 
+// Persists input values across refreshes 
 let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads"));
 
-// Persists input values across refreshes 
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage
   renderLeads()
