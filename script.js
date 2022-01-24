@@ -10,8 +10,18 @@ const inputEl = document.getElementById("input-el");
 // list 
 const ulEl = document.getElementById("ul-el");
 
+//delete lists
+const deleteBtn = document.getElementById("delete-btn");
+
+deleteBtn.addEventListener("dblclick", function(){
+  localStorage.clear();
+  myLeads.length = 0;
+  renderLeads();
+});
+
+
 // Persists input values across refreshes 
-let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads"));
+const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads"));
 
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage
@@ -21,6 +31,7 @@ if (leadsFromLocalStorage) {
 // function that saves input to array 
 inputBtn.addEventListener("click", function(){
   myLeads.push(inputEl.value);
+  //clears input after every value
   inputEl.value = " ";
   //save lead to local storage
   localStorage.setItem("myLeads", JSON.stringify(myLeads) )
@@ -42,10 +53,6 @@ function renderLeads(){
   }
   ulEl.innerHTML = listItems;
 }
-
-
-
-
 
 // Rendering out input values 
 // 1. Create element

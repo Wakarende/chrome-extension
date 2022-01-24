@@ -19,6 +19,7 @@ button{
   border: solid 1px #5f9341;
   margin-top: 10px;
   padding: 10px 20px;
+  font-weight: bold;
 }
 
 ul{
