@@ -14,6 +14,7 @@ const ulEl = document.getElementById("ul-el");
 // function that saves input to array 
 inputBtn.addEventListener("click", function(){
   myLeads.push(inputEl.value);
+  inputEl.value = " ";
   renderLeads();
 });
 
@@ -26,6 +27,7 @@ function renderLeads(){
   }
   ulEl.innerHTML = listItems;
 }
+
 
 
 // Rendering out input values 
